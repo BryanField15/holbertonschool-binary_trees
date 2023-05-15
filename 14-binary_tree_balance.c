@@ -20,15 +20,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	{
 		return (0);
 	}
-	if (tree->left == NULL)
-	{
-		return (1 + binary_tree_height(tree->right));
-	}
-
-	if (tree->right == NULL)
-	{
-		return (1 + binary_tree_height(tree->left));
-	}
 
 	height_left = binary_tree_height(tree->left);
 	height_right = binary_tree_height(tree->right);
@@ -40,7 +31,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	else
 		return (1 + height_right);
 }
-
 /**
  * binary_tree_balance - Measures balance of a binary tree
  * @tree: Pointer to the root node of the tree
